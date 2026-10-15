@@ -1,1 +1,45 @@
 /*  your css code here. If applicable */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.cube-container {
+  width: 200px;
+  height: 200px;
+  perspective: 800px;
+}
+
+#cube {
+  width: 200px;
+  height: 200px;
+  position: relative;
+  transform-style: preserve-3d;
+  transform: rotateX(-20deg) rotateY(30deg);
+}
+
+#cube > div {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.front  { transform: translateZ(100px); }
+.back   { transform: rotateY(180deg) translateZ(100px); }
+.left   { transform: rotateY(-90deg) translateZ(100px); }
+.right  { transform: rotateY(90deg)  translateZ(100px); }
+.top    { transform: rotateX(90deg)  translateZ(100px); }
+.bottom { transform: rotateX(-90deg) translateZ(100px); }
+
+.line-1, .line-2, .line-3 {
+  height: 33.3%;
+  width: 100%;
+  border: 1px solid black;
+}
